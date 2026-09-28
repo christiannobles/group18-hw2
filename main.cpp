@@ -49,7 +49,8 @@ int main( int argc, char * argv[] )
     yearly_interest_rate = arguments[1];
     monthly_payment = arguments[2];
 
-    double interestRateC = yearly_interest_rate / 1200;
+    yearly_interest_rate / 12;
+    double interestRateC = yearly_interest_rate / 100;
     int currentMonth = 0;
     double interestTotal = 0;
     double principle;
