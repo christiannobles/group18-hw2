@@ -85,7 +85,7 @@ int main( int argc, char * argv[] )
 
             cout << currentMonth << "\t" << loan_amount << "\t" 
                  << monthly_payment << "\t" << yearly_interest_rate 
-                 << "\t" << interest << "\t" << principle << endl;
+                 << "\t" << interest << "\t\t" << principle << endl;
         }
         else
         {
@@ -96,7 +96,7 @@ int main( int argc, char * argv[] )
 
             cout << currentMonth << "\t" << loan_amount << "\t" 
                  << monthly_payment << "\t" << yearly_interest_rate 
-                 << "\t" << interest << "\t" << principle << endl;
+                 << "\t" << interest << "\t\t" << principle << endl;
         }
     }
 
