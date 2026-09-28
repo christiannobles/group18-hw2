@@ -65,30 +65,37 @@ int main( int argc, char * argv[] )
 
     while(loan_amount > 0)
     {
+        double interest = loan_amount * interestRateC;
 
-        principle = monthly_payment - (loan_amount * interestRateC);
+        if (monthly_payment <= interest)
+        {
+            cout << "Monthly payment is too small to pay off the loan." << endl;
+            return -4;
+        }
+
+        principle = monthly_payment - interest;
 
         currentMonth++;
 
-        if (loan_amount + (loan_amount * interestRateC) > monthly_payment)
+        if (loan_amount + interest > monthly_payment)
         {
             loan_amount -= principle;
-            interestTotal += loan_amount * interestRateC;;
+            interestTotal += interest;
 
             cout << currentMonth << "\t" << loan_amount << "\t" 
                  << monthly_payment << "\t" << yearly_interest_rate 
-                 << "\t" << loan_amount * interestRateC << "\t" << principle << endl;
+                 << "\t" << interest << "\t" << principle << endl;
         }
         else
         {
-            monthly_payment = loan_amount + (loan_amount * interestRateC);
+            monthly_payment = loan_amount + interest;
             principle = loan_amount;
             loan_amount = 0;
-            interestTotal += loan_amount * interestRateC;;
+            interestTotal += interest;
 
             cout << currentMonth << "\t" << loan_amount << "\t" 
                  << monthly_payment << "\t" << yearly_interest_rate 
-                 << "\t" << loan_amount * interestRateC << "\t" << principle << endl;
+                 << "\t" << interest << "\t" << principle << endl;
         }
     }
 
