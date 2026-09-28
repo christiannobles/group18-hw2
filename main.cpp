@@ -45,6 +45,10 @@ int main( int argc, char * argv[] )
         return -3;
     }
 
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+
     loan_amount = arguments[0];
     yearly_interest_rate = arguments[1];
     monthly_payment = arguments[2];
@@ -83,7 +87,7 @@ int main( int argc, char * argv[] )
             loan_amount -= principle;
             interestTotal += interest;
 
-            cout << currentMonth << "\t" << loan_amount << "\t" 
+            cout << currentMonth << "\t$" << loan_amount << "\t" 
                  << monthly_payment << "\t" << yearly_interest_rate 
                  << "\t" << interest << "\t\t" << principle << endl;
         }
@@ -94,7 +98,7 @@ int main( int argc, char * argv[] )
             loan_amount = 0;
             interestTotal += interest;
 
-            cout << currentMonth << "\t" << loan_amount << "\t" 
+            cout << currentMonth << "\t$" << loan_amount << "\t" 
                  << monthly_payment << "\t" << yearly_interest_rate 
                  << "\t" << interest << "\t\t" << principle << endl;
         }
