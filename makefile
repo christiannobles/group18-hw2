@@ -1,4 +1,3 @@
-#modify this makefile so that it will work for this new assignment
 CC = g++
 
 all: a.out
